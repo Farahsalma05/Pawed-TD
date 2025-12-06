@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exo4</title>
+    <style>
+      .contenu p:nth-of-type(2n+1) {
+        border: 2px solid #666;
+        border-radius: 15px;
+        padding: 10px;
+        margin: 15px 0;
+      }
+      a:link,
+      a:visited {
+        color: red;
+        text-decoration: none;
+      }
+      a:hover {
+        color: white;
+        background-color: red;
+        padding: 2px 5px;
+        border-radius: 5px;
+      }
+      .contenu p::first-letter {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenu">
+      <p>Paragraphe 1 <a href="#lien1">Lien non visité</a></p>
+      <p>Paragraphe 2</p>
+      <p>Paragraphe 3 <a href="#lien2">Lien visité</a></p>
+      <p>Paragraphe 4</p>
+    </div>
+  </body>
+</html>

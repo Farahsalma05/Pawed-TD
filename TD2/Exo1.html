@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exo1</title>
+    <style>
+      input,
+      progress {
+        display: block;
+        width: 300px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>Email :</label>
+      <input type="email" name="" id="" required />
+      <label for="">Pseudo :</label>
+      <input
+        type="text"
+        required
+        pattern="[aA-zZ 0-9]{3,8}"
+        placeholder="veuillez entrer 3 à 8 caractères alphanumérique"
+      />
+      <label for="">Mot de Passe :</label>
+      <input
+        type="password"
+        name=""
+        id=""
+        required
+        pattern="[aA-zZ 0-9]{3,8}"
+        placeholder="veuillez entrer 5 caractères alphanumérique"
+      />
+      <label for="">Le taux de remplissage du formulaire est de 20% :</label>
+      <progress value="20" max="100"></progress>
+      <input type="submit" value="LOGIN" />
+    </form>
+  </body>
+</html>

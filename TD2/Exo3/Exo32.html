@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exo3</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="dessin2" width="600px" height="400px">
+      le navigateur ne supporte pas canvas
+    </canvas>
+    <script>
+      let Des = document.getElementById("dessin2");
+      let ctx = Des.getContext('2d')
+
+      ctx.strokeRect(200,138,200,100)
+      ctx.fillText("Rectangle",275,190)
+    </script>
+  </body>
+</html>

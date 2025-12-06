@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exo2</title>
+    <style>
+      canvas {
+        border: 1px solid #ccc;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="dessin" width="600px" height="400px">
+      <img id="LogoHTML" src="/TD2/Image/logoHtml.png" alt="" width="200px" />
+      <img id="LogoPHP" src="/TD2/Image/logoPhp.png" alt="" width="200px" />
+    </canvas>
+    <script>
+      const canvas = document.getElementById("dessin");
+      const ctx = canvas.getContext("2d");
+
+      const html5Logo = document.getElementById("LogoHTML");
+      const phpLogo = document.getElementById("LogoPHP");
+
+      function drawLogos() {
+        ctx.save();
+        ctx.translate(150, 100);
+        ctx.rotate((45 * Math.PI) / 180);
+        ctx.drawImage(html5Logo, -40, -40, 80, 80);
+        ctx.restore();
+        ctx.drawImage(phpLogo, 350, 100, 80, 80);
+      }
+      html5Logo.onload = () => {
+        phpLogo.onload = drawLogos;
+      };
+    </script>
+  </body>
+</html>

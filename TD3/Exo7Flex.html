@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exo7 - Flex</title>
+    <style>
+        body > * { 
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .milieu {
+            display: flex;
+            flex: 1;
+        }
+
+        nav {
+            width: 200px;
+            min-height: 100%;
+            border-right: 1px solid #ccc;
+        }
+
+        main {
+            margin-left: 8px;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>En-tête</header>
+    <div class="milieu">
+        <nav>Menu</nav>
+        <main>Contenu principal</main>
+    </div>
+    <footer>Pied de page</footer>
+</body>
+</html>

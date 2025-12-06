@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exo4</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+        margin-top: 20px;
+      }
+      video {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <video
+      src="/TD1/Video+sous-titres vtt/video_2025-10-22_11-44-42.mp4"
+      id="vd"
+      width="400"
+      crossorigin="anonymous"
+    ></video>
+    <canvas id="dessin3" width="600" height="400"></canvas>
+    <br />
+    <button onclick="lancerVideo()">Démarrer la vidéo</button>
+    <button onclick="pauseVideo()">Pause</button>
+
+    <script>
+      const canvas = document.getElementById("dessin3");
+      const ctx = canvas.getContext("2d");
+      const video = document.getElementById("vd");
+
+      function dessiner() {
+        if (!video.paused && !video.ended) {
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          requestAnimationFrame(dessiner);
+        }
+      }
+      function lancerVideo() {
+        video.play();
+        dessiner();
+      }
+      function pauseVideo() {
+        video.pause();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exo7 - Grid</title>
+    <style>
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+
+        grid-template-areas:
+          "header header"
+          "menu contenu"
+          "footer footer";
+
+        grid-template-rows: 80px 1fr 60px;
+        grid-template-columns: 200px 1fr;
+      }
+
+      header {
+        grid-area: header;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      nav {
+        grid-area: menu;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      main {
+        grid-area: contenu;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      footer {
+        grid-area: footer;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>En-tête</header>
+    <nav>Menu</nav>
+    <main>Contenu principal</main>
+    <footer>Pied de page</footer>
+  </body>
+</html>

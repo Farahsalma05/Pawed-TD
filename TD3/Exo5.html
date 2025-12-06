@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exo5</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      header,
+      .contenu,
+      footer {
+        padding: 10px;
+        margin: 10px;
+      }
+
+      h1 {
+        text-shadow: 3px 3px 5px red;
+      }
+
+      h2:nth-of-type(1) {
+        transform: rotate(3deg);
+      }
+
+      nav a {
+        display: inline-block;
+        padding: 5px;
+        transition: background-color 0.3s;
+      }
+      nav a:hover {
+        background-color: red;
+        color: white;
+      }
+
+      .contenu {
+        transition: transform 1s ease-in-out;
+        border: 1px solid #ccc;
+      }
+      .contenu:hover {
+        transform: rotate(360deg);
+      }
+
+      footer {
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: #f0f0f0;
+
+        position: relative;
+        animation-name: bougerPied;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes bougerPied {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titre Principal</h1>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+      </nav>
+    </header>
+
+    <div class="contenu">
+      <h2>Deuxième Titre</h2>
+      <p>Contenu principal de la page.</p>
+    </div>
+
+    <footer>Pied de page</footer>
+  </body>
+</html>
