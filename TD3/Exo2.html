@@ -1,74 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exo2</title>
-    <style>
-      .sous-menu {
-        display: none;
-        padding-left: 0;
-      }
-      .menu-principal {
-        list-style-type: none;
-        padding-left: 0;
-        width: 250px;
-        margin: 20px;
-        border: 1px solid #ddd;
-      }
-      .menu-principal > li {
-        font-weight: bold;
-        cursor: pointer;
-        list-style-type: none;
-        position: relative;
-        padding-left: 25px;
-        margin: 10px 0;
-      }
-      .menu-principal > li::before {
-        content:"";
-        position: absolute;
-        left: 5px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 12px;
-        height: 12px;
-        /* background-image: url("/TD3/Images/puce.png"); */
-        list-style-image:url("/TD3/Images/puce.png");
-        /* background-size: contain;
-        background-repeat: no-repeat; */
-      }
-      .sous-menu li {
-        list-style-type: circle;
-        font-weight: normal;
-        margin-left: 35px;
-        padding: 2px 0;
-      }
-    </style>
   </head>
   <body>
-    <div class="conteneur-menu">
-      <ul class="menu-principal">
-        <li onclick="toggleSousMenu('sm-paweb')">
-          PAWEB
-          <ul id="sm-paweb" class="sous-menu">
-            <li>Programation avancée Web</li>
-          </ul>
-        </li>
-
-        <li onclick="toggleSousMenu('sm-sid')">
-          SID
-          <ul id="sm-sid" class="sous-menu">
-            <li>Systèmes d'information distribuées</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <script>
-      function toggleSousMenu(id) {
-        const sousMenu = document.getElementById(id);
-        sousMenu.style.display =
-        sousMenu.style.display === "block" ? "none" : "block";
-      }
-    </script>
+    <form action="/upload-fichiers" method="post" enctype="multipart/form-data">
+      <label for="fichiers">Sélectionner un ou plusieurs fichiers :</label>
+      <input type="file" id="fichiers" name="fichiers_a_uploader[]" multiple />
+    </form>
   </body>
 </html>

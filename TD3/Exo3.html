@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Exo3</title>
-    <style>
-      body {
-        margin: 0;
-      }
-      header {
-        height: 70px;
-        padding: 20px;
-        color: white;
-        text-align: center;
-        background-image: linear-gradient(to bottom, #c2e9fb 20%, #a1c4fd 30%);
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Mon En-tête</h1>
-    </header>
-  </body>
-</html>
+<html lang="fr"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Capture Photo</title> </head>
+<body>
+    <h1>Formulaire de capture photo</h1>
+    
+    <form action="/upload-photo" method="post" enctype="multipart/form-data">
+        <label for="photo">Prendre une photo :</label>
+        <input type="file" id="photo" name="photo_camera" accept="image/*" capture="user">
+    </form>
+</body>
+</html> 

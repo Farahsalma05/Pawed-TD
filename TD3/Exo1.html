@@ -3,47 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <title>Exo1</title>
-    <style>
-      body {
-        width: 550px;
-        height: 250px;
-        border: 1px solid black;
-      }
-      .image-flottante {
-        float: left;
-        width: 150px;
-        height: 150px;
-        margin-right: 20px;
-
-        text-align: center;
-        line-height: 100px;
-      }
-      .clear {
-        clear: both;
-      }
-      p {
-        padding-left: 20px;
-      }
-    </style>
   </head>
   <body>
+    <h1>Où suis-je ?</h1>
+    <p id="resultat">En attente de la localisation...</p>
+    <button onclick="getMaPosition()">Obtenir ma Position</button>
 
-    <div class="clear">
-          <div class="image-flottante">
-      <img src="/TD2/Image/logoHtml.png" alt="" />
-    </div>
-
-    <p>
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-      usto usto usto usto usto usto usto usto usto usto usto usto usto usto usto
-    </p>
-    </div>
+    <script>
+      function getMaPosition() {
+        const resultat = document.getElementById("resultat");
+        if (navigator.geolocation) {
+          resultat.innerHTML = "Recherche de la position...";
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const lat = position.coords.latitude;
+              const lon = position.coords.longitude;
+              resultat.innerHTML = `Latitude : ${lat} <br> Longitude : ${lon}`;
+            },
+            (erreur) => {
+              resultat.innerHTML = `Erreur : ${erreur.message}`;
+            }
+          );
+        } else {
+          resultat.innerHTML = "La géolocalisation n'est pas supportée.";
+        }
+      }
+    </script>
   </body>
 </html>
